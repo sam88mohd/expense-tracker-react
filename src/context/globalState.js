@@ -1,5 +1,5 @@
 import React, { createContext, useReducer } from "react";
-import AppReducer from "./AppReducer";
+import reducer from "./AppReducer";
 
 // set initial state
 
@@ -12,7 +12,7 @@ export const GlobalContext = createContext(initialState);
 
 // create context provider
 export const GlobalProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(AppReducer, initialState);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   function deleteTransaction(id) {
     dispatch({
